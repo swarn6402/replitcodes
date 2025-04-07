@@ -1,0 +1,25 @@
+entrypoint = "zodexample.js"
+modules = ["nodejs-20"]
+hidden = [".config", "package-lock.json"]
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json", "a.txt"]
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["node", "zodexample.js"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 3001
+externalPort = 3001
